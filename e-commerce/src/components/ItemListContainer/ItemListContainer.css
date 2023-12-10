@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+/*font-family: 'Ubuntu', sans-serif;*/
+
+.container-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.container-section h1 {
+    font-family: 'Ubuntu', sans-serif;
+}

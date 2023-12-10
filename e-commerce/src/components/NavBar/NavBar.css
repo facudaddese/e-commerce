@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+/*font-family: 'Roboto Condensed', sans-serif;*/
+
+.header-container nav {
+    display: grid;
+    grid-template-areas:
+        "adidas navbar carrito"
+    ;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container nav .logo-adidas {
+    grid-area: adidas;
+}
+
+.header-container nav .contenedor-navBar {
+    grid-area: navbar;
+}
+
+.header-container nav {
+    grid-area: carrito;
+}
+
+.header-container nav .logo-adidas {
+    margin-left: 30px;
+}
+
+.header-container nav .logo-adidas a img {
+    height: 50px;
+}
+
+.navBar {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    gap: 20px;
+}
+
+.navBar li a {
+    text-decoration: none;
+    color: #000000;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.navBar li a:hover {
+    font-weight: bold;
+}
+
+.header-container nav .logo-carrito {
+    margin-right: 30px;
+}
+
+.header-container nav .logo-carrito:hover {
+    cursor: pointer;
+}
