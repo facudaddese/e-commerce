@@ -2,7 +2,7 @@ import "./NavBar.css";
 
 import CartWidget from "../CartWidget/CartWidget";
 
-const navBar = () => {
+const NavBar = () => {
     return (
         <div className="header-container">
             <nav>
@@ -26,4 +26,4 @@ const navBar = () => {
     );
 }
 
-export default navBar;
+export default NavBar;
