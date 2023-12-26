@@ -39,13 +39,13 @@
     gap: 20px;
 }
 
-.navBar li a {
+.navBar .li {
     text-decoration: none;
     color: #000000;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-.navBar li a:hover {
+.navBar .li:hover {
     font-weight: bold;
 }
 

@@ -3,12 +3,19 @@ import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 const App = () => {
   return (
-    <div>
-      <NavBar />
-      <ItemListContainer description="Proximamente E-commerce adidas..." />
-    </div>
+    <Router>
+      <div>
+        <NavBar />
+        <ItemListContainer />
+      </div>
+      <Routes>
+        <Route path="/" element={<HombrePages />} />
+      </Routes>
+    </Router >
   );
 }
 
