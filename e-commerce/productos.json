@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "category": "hombre",
+        "description": "Remera alternativa Argentina 1994",
+        "img": "https://i.postimg.cc/GmGwBYs2/Camiseta-Alternativa-Argentina-1994-Azul-IS0266-HM1.jpg",
+        "price": "$90.000"
+    },
+    {
+        "id": 2,
+        "category": "hombre",
+        "description": "Remera aniversario Argentina Campeon 2022",
+        "img": "https://i.postimg.cc/s2zF5XpJ/Remera-AFA-WC-Aniversario-1-Negro-IV1927-01-laydown.jpg",
+        "price": "$50.000"
+    },
+    {
+        "id": 3,
+        "category": "mujer",
+        "description": "Camiseta mujer Argentina 3 estrellas",
+        "img": "https://i.postimg.cc/15yN7cyx/Camiseta_AFA_3_Estrellas_Campeones_del_Mundo_Blanco_IR2707_01_laydown.jpg",
+        "price": "$45.000"
+    },
+    {
+        "id": 4,
+        "category": "mujer",
+        "description": "Camiseta alternativa Argentina 3 estrellas",
+        "img": "https://i.postimg.cc/7YXJFGL5/Camiseta_Alternativa_Seleccion_Argentina_Femenina_23_Negro_HT4228_21_model.jpg",
+        "price": "$43.000"
+    },
+    {
+        "id": 5,
+        "category": "niño",
+        "description": "Camiseta Messi Inter de Miami niño",
+        "img": "https://i.postimg.cc/xTFTGKC3/Camiseta_Titular_Messi_10_Inter_Miami_CF_22-23_Ninos_Rosa_JE9702_01_laydown.jpg",
+        "price": "$38.000"
+    },
+    {
+        "id": 6,
+        "category": "niño",
+        "description": "Camiseta Dibu Martinez",
+        "img": "https://i.postimg.cc/c4JL8DsJ/Remera_AFA_WC_Aniversario_Ninos_1_Negro_IV3065_01_laydown.jpg",
+        "price": "37.000"
+    }
+]
