@@ -15,9 +15,9 @@ const NavBar = () => {
                 </div>
                 <div className="contenedor-navBar">
                     <ul className="navBar">
-                        <Link className="li" to={"/mujer"}>Mujer</Link>
-                        <Link className="li" to={"/hombre"}>Hombre</Link>
-                        <Link className="li" to={"/niño"}>Niño</Link>
+                        <Link className="li" to={"/category/mujer"}>Mujer</Link>
+                        <Link className="li" to={"/category/hombre"}>Hombre</Link>
+                        <Link className="li" to={"/category/niño"}>Niño</Link>
                     </ul>
                 </div>
                 <div className="logo-carrito">

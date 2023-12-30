@@ -1,13 +1,13 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-
+// import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import InicioPages from "./Pages/InicioPages/InicioPages";
-import MujeresPages from "./Pages/MujeresPages/MujeresPages";
-import HombrePages from "./pages/HombrePages/HombrePages";
-import NiñoPages from "./pages/NiñoPages/NiñoPages";
+// import InicioPages from "./Pages/InicioPages/InicioPages";
+// import MujeresPages from "./Pages/MujeresPages/MujeresPages";
+// import HombrePages from "./pages/HombrePages/HombrePages";
+// import NiñoPages from "./pages/NiñoPages/NiñoPages";
 
 const App = () => {
   return (
@@ -15,10 +15,9 @@ const App = () => {
       <div>
         <NavBar />
         <Routes>
-          <Route path="/inicio" element={<InicioPages />} />
-          <Route path="/mujer" element={<MujeresPages />} />
-          <Route path="/hombre" element={<HombrePages />} />
-          <Route path="/niño" element={<NiñoPages />} />
+          <Route path="/" element={<ItemListContainer />} />
+          {/* <Route path="/category/:categoryId" element={<ItemListContainer />} /> */}
+          {/* <Route path="/item/:id" element={<ItemDetailContainer />} /> */}
         </Routes>
       </div>
       <ItemListContainer />
