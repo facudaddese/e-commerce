@@ -1,17 +1,20 @@
 /* eslint-disable react/jsx-key */
 import "./ItemListContainer.css";
 import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
 
+    const { categoryId } = useParams();
     const [products, setProducts] = useState([])
+
     useEffect(() => {
 
         fetch('../../../productos.json')
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => setProducts(categoryId ? data.filter(e => e.category == categoryId) : data))
             .catch(err => console.log(err))
-    }, [])
+    }, [categoryId])
 
     return (
 
