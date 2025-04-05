@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*--------------------------------------*/
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HEADER */
+
+.flex-ul-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+}
+
+li {
+    list-style: none;
+}
+
+li a {
+    text-decoration: none;
+}
+
+ul img {
+    width: 40px;
+}
+
+ul img:hover {
+    cursor: pointer;
+}
+
+/*--------------------------------------*/
+
+/* MAIN */
+
+h1{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.flex-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*--------------------------------------*/
+
+/* FOOTER */
