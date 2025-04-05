@@ -7,7 +7,12 @@
 :root {
     --black-color: #000000;
     --yellow-color: rgb(240, 240, 75);
+    --green-color: #00a650;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wdth,wght@0,87.5,500;1,87.5,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 /*--------------------------------------*/
 
@@ -40,6 +45,7 @@ li {
 li a {
     text-decoration: none;
     color: var(--black-color);
+    font-family: "Inter", sans-serif;
 }
 
 li a:hover {
@@ -62,6 +68,8 @@ ul img:hover {
 .title {
     text-align: center;
     padding-top: 150px;
+    font-family: "Playfair Display", serif;
+    font-size: 45px;
 }
 
 .flex-container {
@@ -70,7 +78,11 @@ ul img:hover {
     align-items: center;
     flex-flow: column wrap;
     gap: 10px;
-    margin: 100px 0;
+    margin: 80px 0;
+}
+
+.flex-container h2 {
+    font-family: "Lato", sans-serif;
 }
 
 .material-symbols-outlined {
@@ -80,11 +92,15 @@ ul img:hover {
 .flex-container a {
     text-decoration: none;
     color: var(--black-color);
+    font-family: "Inter", sans-serif;
+    margin: 7px;
+    color: var(--green-color);
 }
 
 .flex-container a:hover {
     border-bottom: 1px solid var(--black-color);
     transition: border-bottom 1s linear 0.2s;
+    color: var(--green-color);
 }
 
 main>section:last-child {
@@ -109,6 +125,7 @@ main>section:last-child {
 /*--------------------------------------*/
 
 /* FOOTER */
+
 body>.footer {
     margin-top: 100px;
     background-color: var(--yellow-color);
