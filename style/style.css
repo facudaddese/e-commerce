@@ -50,7 +50,7 @@ li a {
 
 li a:hover {
     border-bottom: 1px solid var(--green-color);
-    transition: border-bottom 1s linear 0.2s;
+    color: var(--green-color);
 }
 
 ul img {
