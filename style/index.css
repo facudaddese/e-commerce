@@ -1,0 +1,58 @@
+/* MAIN */
+
+.title {
+    text-align: center;
+    padding-top: 150px;
+    font-family: "Playfair Display", serif;
+    font-size: 45px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    gap: 10px;
+    margin: 80px 0;
+}
+
+.flex-container h2 {
+    font-family: "Lato", sans-serif;
+}
+
+.material-symbols-outlined {
+    vertical-align: top;
+}
+
+.flex-container a {
+    text-decoration: none;
+    color: var(--black-color);
+    font-family: "Inter", sans-serif;
+    margin: 7px;
+    color: var(--green-color);
+}
+
+.flex-container a:hover {
+    border-bottom: 1px solid var(--green-color);
+    transition: border-bottom 1s linear 0.2s;
+    color: var(--green-color);
+}
+
+main>section:last-child {
+    margin-bottom: 0;
+}
+
+/* CARROUSEL */
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+
+#carouselNotebooks .carousel-item,
+#carouselAccesorios .carousel-item,
+#carouselCelulares .carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
