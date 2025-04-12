@@ -33,7 +33,6 @@
 }
 
 .flex-container a:hover {
-    border-bottom: 1px solid var(--green-color);
     color: var(--green-color);
 }
 

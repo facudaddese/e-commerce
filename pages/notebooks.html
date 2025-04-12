@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computación | TechShop</title>
+    <title>Notebooks | TechShop</title>
     <link rel="shortcut icon" href="/shop.ico" type="image/x-icon">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/style/style.css">
     <link rel="stylesheet" href="/style/computacion.css">
@@ -19,9 +17,18 @@
         <nav>
             <ul class="ul-container">
                 <li><a href="/index.html">Inicio</a></li>
-                <li><a href="accesorios.html">Accesorios</a></li>
                 <li><a href="celulares.html">Celulares</a></li>
-                <img src="/assets/img/carrito.png" alt="Carrito de compras" id="carrito">
+                <li><a href="accesorios.html">Accesorios</a></li>
+                <div id="carrito-container" class="carrito-container">
+                    <img src="/assets/img/carrito.png" alt="Carrito de compras" id="carrito">
+                    <span id="contador" class="span-productos">0</span>
+
+                    <div class="barra-lateral" id="barra-lateral">
+                        <span class="material-symbols-outlined close">close</span>
+                        <p id="mensaje-carrito"></p>
+                    </div>
+                </div>
+                <div id="overlay" class="overlay"></div>
             </ul>
         </nav>
     </header>
@@ -91,7 +98,7 @@
         </p>
     </footer>
 
-    <script src="js/index.js"></script>
+    <script src="/js/carrito.js"></script>
 </body>
 
 </html>
