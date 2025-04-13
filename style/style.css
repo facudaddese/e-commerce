@@ -8,6 +8,7 @@
     --black-color: #000000;
     --yellow-color: rgb(240, 240, 75);
     --green-color: #00a650;
+    --white-color: #FFFFFF;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wdth,wght@0,87.5,500;1,87.5,500&display=swap');
@@ -60,17 +61,21 @@ li a:hover {
     cursor: pointer;
 }
 
+/*--------------------------------------*/
+
+/* CARRITO */
+
 .barra-lateral {
     position: fixed;
+    top: 0;
+    right: 0;
     width: 350px;
     height: 100vh;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
-    top: 0;
-    right: 0;
     z-index: 1000;
-    background-color: #FFFFFF;
+    background-color: var(--white-color);
     transform: translateX(100%);
-    transition: transform 0.8s ease-in-out;
+    transition: transform 0.8s ease-in-out 0.1s;
 }
 
 .barra-lateral.visible {
@@ -108,6 +113,70 @@ li a:hover {
     pointer-events: all;
 }
 
+/* PRODUCTOS */
+
+.productos-contenedor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: var(--white-color);
+    width: 80vw;
+    height: 80vh;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transform: translateY(-200%);
+    transition: transform 1s ease-in-out 0.2s;
+}
+
+.productos-contenedor.visible {
+    transform: translateY(0);
+}
+
+.producto-detalle {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.img-producto {
+    width: 600px;
+    border: 1px solid #DDDDDD;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.producto-info {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 400px;
+}
+
+.producto-titulo {
+    font-size: 25px;
+    font-family: "Raleway", sans-serif;
+}
+
+.producto-precio {
+    font-size: 20px;
+}
+
+.btn-producto {
+    background-color: var(--black-color);
+    color: var(--white-color);
+    border: none;
+    padding: 15px 50px;
+    border-radius: 50px;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
 
 /*--------------------------------------*/
 
