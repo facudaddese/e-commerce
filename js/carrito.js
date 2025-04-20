@@ -140,9 +140,7 @@ cerrarCard.addEventListener("click", () => {
     cerrar();
 })
 
-// Botón de vaciar carrito
 btnVaciar.addEventListener("click", () => {
-    // Mostrar alerta de confirmación
     Swal.fire({
         title: "Estás seguro que quieres vaciar el carrito?",
         text: "Perderás los productos almacenados!",
