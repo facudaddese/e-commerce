@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="/style/style.css">
-    <link rel="stylesheet" href="/style/celulares.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/celulares.css">
 </head>
 
 <body>
@@ -18,16 +18,33 @@
         <nav>
             <ul class="ul-container">
                 <li><a href="notebooks.html">Notebooks</a></li>
-                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="accesorios.html">Accesorios</a></li>
-                
+
                 <div id="carrito-container" class="carrito-container">
-                    <img src="/assets/img/carrito.png" alt="Carrito de compras" id="carrito">
+                    <img src="../assets/img/carrito.png" alt="Carrito de compras" id="carrito">
                     <span id="contador" class="span-productos"></span>
 
                     <div class="barra-lateral" id="barra-lateral">
                         <span class="material-symbols-outlined close">close</span>
                         <p id="mensaje-carrito" class="empty-carrito full-carrito"></p>
+
+                        <div id="grid-carrito" class="grid-container oculto">
+                            <img src="" alt="Producto seleccionado">
+                            <h5></h5>
+
+                            <div id="contador-cantidad"
+                                class="d-flex align-items-center justify-content-between rounded-pill border px-3 py-1"
+                                style="width: 100px;">
+                                <span id="btn-menos" style="cursor: pointer; font-size: 20px;">−</span>
+                                <span id="valor-cantidad" class="fw-semibold">1</span>
+                                <span id="btn-mas" style="cursor: pointer; font-size: 20px;">+</span>
+                            </div>
+
+                            <h6></h6>
+                            <button id="vaciar" class="btn-vaciar">Vaciar carrito</button>
+                            <button id="finalizar" class="btn-finalizar">Finalizar compra</button>
+                        </div>
                     </div>
                 </div>
 
@@ -39,55 +56,55 @@
     <main class="contenedor">
         <section class="flex-container">
             <div class="card">
-                <img src="/assets/img/celu1.png" alt="Celular en stock">
+                <img src="../assets/img/celu1.png" alt="Celular en stock">
                 <h5>Celular Tcl 505 4+4gb RAM +128gb Space Gray</h5>
                 <h6>$ 148.999</h6>
             </div>
 
             <div class="card">
-                <img src="/assets/img/celu2.png" alt="Celular en stock">
+                <img src="../assets/img/celu2.png" alt="Celular en stock">
                 <h5>Motorola Moto E14 64GB Gris 2GB RAM</h5>
                 <h6>$ 132.000</h6>
             </div>
 
             <div class="card">
-                <img src="/assets/img/celu3.png" alt="Celular en stock">
+                <img src="../assets/img/celu3.png" alt="Celular en stock">
                 <h5>Xiaomi Redmi Note 13 Pro 5G Dual SIM 512 GB Negro estelar 12 GB RAM</h5>
                 <h6>$ 593.000</h6>
             </div>
 
             <div class="card">
-                <img src="/assets/img/celu4.png" alt="Celular en stock">
+                <img src="../assets/img/celu4.png" alt="Celular en stock">
                 <h5>Tcl 50 5g 256gb 6+6gb Alta Resolución Space Gray</h5>
                 <h6>$ 259.999</h6>
             </div>
 
             <div class="card">
-                <img src="/assets/img/celu5.png" alt="Celular en stock">
+                <img src="../assets/img/celu5.png" alt="Celular en stock">
                 <h5>Samsung Galaxy S24 Fe 256gb 8gb 5g Grey</h5>
                 <h6>$ 1.200.000</h6>
             </div>
 
             <div class="card">
-                <img src="/assets/img/celu6.png" alt="Celular en stock">
+                <img src="../assets/img/celu6.png" alt="Celular en stock">
                 <h5>Celular Motorola Moto G15 128/4gb Ram</h5>
                 <h6>$ 221.000</h6>
             </div>
 
             <div class="card">
-                <img src="/assets/img/celu7.png" alt="Celular en stock">
+                <img src="../assets/img/celu7.png" alt="Celular en stock">
                 <h5>Celular Samsung Galaxy A15 128/4gb Ram</h5>
                 <h6>$ 295.000</h6>
             </div>
 
             <div class="card">
-                <img src="/assets/img/celu8.png" alt="Celular en stock">
+                <img src="../assets/img/celu8.png" alt="Celular en stock">
                 <h5>Motorola Moto G15 4 + 128 Gb Gris</h5>
                 <h6>$ 210.000</h6>
             </div>
 
             <div class="card">
-                <img src="/assets/img/celu9.png" alt="Celular en stock">
+                <img src="../assets/img/celu9.png" alt="Celular en stock">
                 <h5>Samsung Galaxy A15 128 GB Azul claro 4 GB RAM</h5>
                 <h6>$ 260. 000</h6>
             </div>
@@ -105,6 +122,7 @@
                     <h5 id="producto-titulo" class="producto-titulo"></h5>
                     <h6 id="producto-precio" class="producto-precio"></h6>
                     <button id="btn-agregar" class="btn-producto">Agregar a carrito</button>
+                    <button id="btn-eliminar" class="btn-producto">Eliminar del carrito</button>
                 </div>
             </div>
         </div>
