@@ -27,7 +27,24 @@
 
                     <div class="barra-lateral" id="barra-lateral">
                         <span class="material-symbols-outlined close">close</span>
-                        <p id="mensaje-carrito"></p>
+                        <p id="mensaje-carrito" class="empty-carrito full-carrito"></p>
+
+                        <div id="grid-carrito" class="grid-container oculto">
+                            <img src="" alt="Producto seleccionado">
+                            <h5></h5>
+
+                            <div id="contador-cantidad"
+                                class="d-flex align-items-center justify-content-between rounded-pill border px-3 py-1"
+                                style="width: 100px;">
+                                <span id="btn-menos" style="cursor: pointer; font-size: 20px;">−</span>
+                                <span id="valor-cantidad" class="fw-semibold">1</span>
+                                <span id="btn-mas" style="cursor: pointer; font-size: 20px;">+</span>
+                            </div>
+                            
+                            <h6></h6>
+                            <button id="vaciar" class="btn-vaciar">Vaciar carrito</button>
+                            <button id="finalizar" class="btn-finalizar">Finalizar compra</button>
+                        </div>
                     </div>
                 </div>
 
@@ -104,7 +121,8 @@
                 <div class="producto-info">
                     <h5 id="producto-titulo" class="producto-titulo"></h5>
                     <h6 id="producto-precio" class="producto-precio"></h6>
-                    <button id="btn" class="btn-producto">Agregar a carrito</button>
+                    <button id="btn-agregar" class="btn-producto">Agregar a carrito</button>
+                    <button id="btn-eliminar" class="btn-producto">Eliminar del carrito</button>
                 </div>
             </div>
         </div>
