@@ -16,17 +16,16 @@ const productoPrecio = document.getElementById('producto-precio');
 const btnAgregar = document.getElementById('btn-agregar');
 const btnEliminar = document.getElementById('btn-eliminar');
 
-//guardo la cantidad de productos agregados
+// Variable para guardar el producto seleccionado
+let productoSeleccionado = null;
+
+// Guardo la cantidad de productos agregados
 let contadorProductos = Number(sessionStorage.getItem('contador')) || 0;
-//mantengo la cantidad de productos al pasar de pestaña
+// Mantengo la cantidad de productos al pasar de pestaña
 contador.textContent = contadorProductos;
 
-//cuando se toque el carrito, se abre la barra-lateral
+// Cuando se toque el carrito, se abre la barra-lateral
 carritoContainer.addEventListener("click", function (event) {
-
-    //si <span class="material-symbols-outlined close">close</span>
-    //contiene la clase "close"  == true
-    //return, no sigue con la ejecucion
     if (event.target.classList.contains("close")) return;
 
     barraLateral.classList.add('visible');
@@ -43,7 +42,7 @@ carritoContainer.addEventListener("click", function (event) {
     }
 });
 
-//creo una funcion reutilizable para cerrar la barra-lateral (carrito) y la pestaña de agregar productos al mismo
+// Creo una funcion reutilizable para cerrar la barra-lateral (carrito) y la pestaña de agregar productos al mismo
 function cerrar() {
     barraLateral.classList.remove('visible');
     overlay.classList.remove('visible');
@@ -51,17 +50,17 @@ function cerrar() {
     productosContenedor.classList.remove('visible');
 }
 
-//cuando se toque la X se cierra la barra-lateral (carrito)
+// Cuando se toque la X se cierra la barra-lateral (carrito)
 cerrarCarrito.addEventListener("click", () => {
     cerrar();
 });
 
-//cuando se toque la pantalla principal, se cierra la barra-lateral (carrito)
+// Cuando se toque la pantalla principal, se cierra la barra-lateral (carrito)
 overlay.addEventListener("click", () => {
     cerrar();
-})
+});
 
-//recorro c/u de los productos 
+// Recorro c/u de los productos 
 let productos = {};
 cards.forEach(card => {
     card.addEventListener("click", () => {
@@ -69,76 +68,101 @@ cards.forEach(card => {
         overlay.classList.add('visible');
         document.body.classList.add('no-scroll');
 
-        //obtengo la img de cada producto
+        // Obtengo la img de cada producto
         const imgSrc = card.querySelector('img').src;
-        //obtengo el titulo de cada producto
+        // Obtengo el titulo de cada producto
         const titulo = card.querySelector('h5').textContent;
-        //obtengo el precio de cada producto
+        // Obtengo el precio de cada producto
         const precio = card.querySelector('h6').textContent;
 
-        //se lo asigno a la img
+        // Se lo asigno a la img
         productoImg.src = imgSrc;
-        //se lo asigno al titulo
+        // Se lo asigno al titulo
         productoTitulo.textContent = titulo;
-        //se lo asigno al precio
+        // Se lo asigno al precio
         productoPrecio.textContent = precio;
 
-        productos = {
+        // Se guarda el producto seleccionado en la variable
+        productoSeleccionado = {
             nombre: titulo,
             precio: precio,
             imagen: imgSrc
-        }
-    })
+        };
+    });
 });
 
 btnAgregar.addEventListener("click", () => {
     let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
 
-    carrito.push(productos);
-    sessionStorage.setItem('carrito', JSON.stringify(carrito));
+    // Aquí estamos agregando el producto seleccionado correctamente
+    if (productoSeleccionado) {
+        carrito.push(productoSeleccionado);
+        sessionStorage.setItem('carrito', JSON.stringify(carrito));
 
-    contadorProductos++;
-    contador.textContent = contadorProductos;
-    sessionStorage.setItem('contador', contadorProductos);
+        contadorProductos++;
+        contador.textContent = contadorProductos;
+        sessionStorage.setItem('contador', contadorProductos);
 
-    Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Producto agregado con éxito!",
-        showConfirmButton: false,
-        timer: 1200
-    });
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Producto agregado con éxito!",
+            showConfirmButton: false,
+            timer: 1450
+        });
+    } else {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "No has seleccionado ningún producto para agregar.",
+        });
+    }
 });
 
 btnEliminar.addEventListener("click", () => {
     let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
 
-    if (carrito.length === 0) {
+    if (productoSeleccionado) {
+        const productoEnCarrito = carrito.find(producto => producto.nombre === productoSeleccionado.nombre);
+
+        if (productoEnCarrito) {
+            // Si el producto está en el carrito, lo elimino
+            carrito = carrito.filter(producto => producto.nombre !== productoSeleccionado.nombre);
+            sessionStorage.setItem('carrito', JSON.stringify(carrito));
+
+            // Actualizo el contador
+            contadorProductos = carrito.length;
+            contador.textContent = contadorProductos;
+            sessionStorage.setItem('contador', contadorProductos);
+
+            Swal.fire({
+                position: "top-end",
+                icon: "error",
+                title: "Producto eliminado con éxito!",
+                showConfirmButton: false,
+                timer: 1450
+            });
+        } else {
+            // Si el producto no está en el carrito
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Este producto no está en el carrito.",
+            });
+        }
+    } else {
+        // Si no hay un producto seleccionado
         Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Por el momento no hay productos en el carrito!",
-        });
-    } else {
-        Swal.fire({
-            position: "top-end",
-            icon: "error",
-            title: "Producto eliminado con éxito!",
-            showConfirmButton: false,
-            timer: 1200
+            text: "No has seleccionado ningún producto para eliminar.",
         });
     }
-
-    carrito = carrito.filter(producto => producto.nombre !== productos.nombre);
-    sessionStorage.setItem('carrito', JSON.stringify(carrito));
-
-    contadorProductos = carrito.length;
-    contador.textContent = contadorProductos;
-    sessionStorage.setItem('contador', contadorProductos);
 });
+
 cerrarCard.addEventListener("click", () => {
     cerrar();
-})
+});
 
 btnVaciar.addEventListener("click", () => {
     Swal.fire({
@@ -155,7 +179,7 @@ btnVaciar.addEventListener("click", () => {
             sessionStorage.setItem('contador', 0);
 
             mensajeCarrito.textContent = 'Tu carrito está vacío';
-            gridCarrito.classList.add('oculto'); 
+            gridCarrito.classList.add('oculto');
 
             Swal.fire({
                 title: "Carrito vacío!",
@@ -169,3 +193,22 @@ btnVaciar.addEventListener("click", () => {
     });
 });
 
+btnFinalizar.addEventListener("click", () => {
+    Swal.fire({
+        title: "Deseas finalizar la compra?",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, finalizar compra"
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+            Swal.fire({
+                title: "Compra finalizada!",
+                text: "Nos estaremos comunicando a la brevedad.",
+                icon: "success"
+            });
+        }
+    })
+})
