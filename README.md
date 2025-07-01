@@ -1,6 +1,6 @@
 # 🛒 TechShop
 
-**TechShop** es un e-commerce simulado donde podés explorar productos de tecnología como notebooks, celulares y accesorios. El proyecto fue desarrollado como práctica de desarrollo web, aplicando conocimientos de HTML, CSS, JavaScript y Bootstrap.
+**TechShop** es un e-commerce simulado donde podés explorar productos de tecnología como notebooks, celulares y accesorios. El proyecto fue desarrollado como práctica de desarrollo web, aplicando conocimientos de HTML, CSS, JavaScript y Bootstrap. [Ver sitio](https://facudaddese.github.io/e-commerce/)
 
 ## 🚀 Características principales
 
@@ -19,9 +19,9 @@
 - Bootstrap 5
 - Google Fonts / Material Symbols
 
-## ✍️ Autor
+## Autor
 
-Desarrollado por [Facundo D'Addese](https://www.linkedin.com/in/facundo-d-addese-797b241aa/)
+[Facundo D'addese](https://www.linkedin.com/in/facundo-d-addese-797b241aa/) estudiante de la Licenciatura en Sistemas y en camino a ser FrontEnd Developer.
 
 ---
 
